@@ -4,15 +4,6 @@ import { initialize, mswLoader } from "msw-storybook-addon";
 
 initialize();
 
-export const loaders = [mswLoader];
-import { handlers } from "../mocks/handler";
-
-export const parameters = {
-  msw: {
-    handlers,
-  },
-};
-
 const preview: Preview = {
   parameters: {
     controls: {
@@ -29,6 +20,7 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+  loaders: [mswLoader],
 };
 
 export default preview;
